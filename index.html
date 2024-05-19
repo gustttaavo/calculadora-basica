@@ -7,26 +7,43 @@
     <title>Calculadora</title>
 </head>
 <body>
-    <div class="calculate-container">
-    <h1>Calculadora</h1>
-    
-    <input type="number" id="num1" placeholder="Primeiro número">
-    <select id="operação">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">\</option>
-    </select>    
-
-        <input type="number" id="num2" placeholder="Segundo número">
-        <button onclick="calculate()">Calcular</button>
-        <h2 id="result">Resultado: </h2>
-    
+    <!-- Container principal da calculadora -->
+    <div class="calculator-container">
+        <h1>Calculadora</h1>
+        
+        <!-- Display da calculadora -->
+        <div class="display" id="display">0</div>
+        
+        <!-- Container dos botões -->
+        <div class="buttons">
+            
+            <!-- Botões dos números -->
+            <div class="numbers">
+                <button onclick="appendNumber(1)">1</button>
+                <button onclick="appendNumber(2)">2</button>
+                <button onclick="appendNumber(3)">3</button>
+                <button onclick="appendNumber(4)">4</button>
+                <button onclick="appendNumber(5)">5</button>
+                <button onclick="appendNumber(6)">6</button>
+                <button onclick="appendNumber(7)">7</button>
+                <button onclick="appendNumber(8)">8</button>
+                <button onclick="appendNumber(9)">9</button>
+                <button onclick="appendNumber(0)">0</button>
+            </div>
+            
+            <!-- Botões das operações -->
+            <div class="operations">
+                <button onclick="setOperation('+')">+</button>
+                <button onclick="setOperation('-')">-</button>
+                <button onclick="setOperation('*')">*</button>
+                <button onclick="setOperation('/')">/</button>
+                <button onclick="calculate()">=</button> <!-- Botão para calcular o resultado -->
+                <button onclick="clearDisplay()">C</button> <!-- Botão para limpar o display -->
+            </div>
+        </div>
     </div>
-
- <script src="assets/script.js"></script>
-
-
-
+    
+    <!-- Script JavaScript -->
+    <script src="assets/script.js"></script>
 </body>
 </html>

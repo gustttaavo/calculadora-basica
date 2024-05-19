@@ -1,48 +1,65 @@
-function soma(a, b) {
-    return a + b;
+// Variáveis para armazenar o número atual, o número anterior e a operação selecionada
+let currentNumber = '';
+let previousNumber = '';
+let operation = null;
+
+// Função para adicionar número ao display
+function appendNumber(number) {
+    currentNumber = currentNumber.toString() + number.toString();
+    updateDisplay();
 }
 
-function subtraçaõ(a, b) {
-    return a - b;
-}
-
-function multiplicação(a, b) {
-    return a * b;
-}
-
-function divisão(a, b) {
-    if (b === 0) {
-        return "Erro: Divisão por zero";
+// Função para definir a operação
+function setOperation(op) {
+    if (currentNumber === '') return;
+    if (previousNumber !== '') {
+        calculate();
     }
-    return a / b;
+    operation = op;
+    previousNumber = currentNumber;
+    currentNumber = '';
 }
 
+// Função para calcular o resultado da operação
 function calculate() {
-    const num1 = parseFloat(document.getElementById('num1').value);
-    const num2 = parseFloat(document.getElementById('num2').value);
-    const operation = document.getElementById('operação').value;
     let result;
+    const prev = parseFloat(previousNumber);
+    const current = parseFloat(currentNumber);
 
-    if (isNaN(num1) || isNaN(num2)) {
-        result = "Erro: Por favor, insira números válidos";
-    } else {
-        switch (operation) {
-            case '+':
-                result = soma(num1, num2);
-                break;
-            case '-':
-                result = subtração(num1, num2);
-                break;
-            case '*':
-                result = multiplicação(num1, num2);
-                break;
-            case '/':
-                result = divisão(num1, num2);
-                break;
-            default:
-                result = "Operação inválida";
-        }
+    if (isNaN(prev) || isNaN(current)) return;
+
+    switch (operation) {
+        case '+':
+            result = prev + current;
+            break;
+        case '-':
+            result = prev - current;
+            break;
+        case '*':
+            result = prev * current;
+            break;
+        case '/':
+            result = prev / current;
+            break;
+        default:
+            return;
     }
-    
-    document.getElementById('result').innerText = "Resultado: " + result;
+
+    currentNumber = result;
+    operation = null;
+    previousNumber = '';
+    updateDisplay();
+}
+
+// Função para atualizar o display
+function updateDisplay() {
+    document.getElementById('display').innerText = currentNumber;
+}
+
+// Função para limpar o display
+function clearDisplay() {
+    currentNumber = '';
+    previousNumber = '';
+    operation = null;
+    updateDisplay();
 }
