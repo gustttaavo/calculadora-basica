@@ -1,50 +1,33 @@
-# Calculadora Básica
-
+Calculadora Básica
 Este é um projeto simples de uma calculadora web que realiza as quatro operações básicas: adição, subtração, multiplicação e divisão. O objetivo deste projeto é demonstrar uma aplicação básica utilizando HTML, CSS e JavaScript.
 
-## Funcionalidades
+Funcionalidades
+Adição: Soma dois números.
+Subtração: Subtrai um número de outro.
+Multiplicação: Multiplica dois números.
+Divisão: Divide um número pelo outro, com tratamento de erro para divisão por zero.
+Interface Gráfica: Interface simples e intuitiva para inserção dos números e seleção da operação.
+Tecnologias Utilizadas
+HTML
+CSS
+JavaScript
+Estrutura do Projeto
+index.html: Arquivo HTML principal que contém a estrutura da calculadora.
+assets/style.css: Arquivo CSS para estilização da página.
+assets/script.js: Arquivo JavaScript com as funções de cálculo e manipulação da interface.
+Como Usar
+Clone o repositório para sua máquina local:
 
-- **Adição**: Soma dois números.
-- **Subtração**: Subtrai um número de outro.
-- **Multiplicação**: Multiplica dois números.
-- **Divisão**: Divide um número pelo outro, com tratamento de erro para divisão por zero.
-- **Interface Gráfica**: Interface simples e intuitiva para inserção dos números e seleção da operação.
+git clone https://github.com/seuusuario/calculadora-basica.git
+Navegue até a pasta do projeto:
 
-## Tecnologias Utilizadas
+cd calculadora-basica
+Abra o arquivo index.html no seu navegador preferido.
 
-- HTML
-- CSS
-- JavaScript
-
-## Estrutura do Projeto
-
-- `index.html`: Arquivo HTML principal que contém a estrutura da calculadora.
-- `assets/style.css`: Arquivo CSS para estilização da página.
-- `assets/script.js`: Arquivo JavaScript com as funções de cálculo e manipulação da interface.
-
-## Como Usar
-
-1. Clone o repositório para sua máquina local:
-
-    ```sh
-    git clone https://github.com/seuusuario/calculadora-basica.git
-    ```
-
-2. Navegue até a pasta do projeto:
-
-    ```sh
-    cd calculadora-basica
-    ```
-
-3. Abra o arquivo `index.html` no seu navegador preferido.
-
-## Funcionalidades Detalhadas
-
-### Interface Gráfica
-
+Funcionalidades Detalhadas
+Interface Gráfica
 A interface gráfica consiste em dois campos de entrada para os números, uma lista de seleção para escolher a operação e um botão para calcular o resultado.
 
-```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,7 +81,7 @@ A interface gráfica consiste em dois campos de entrada para os números, uma li
 Funções de Cálculo
 As funções de cálculo estão definidas no arquivo script.js. Elas realizam as operações básicas e lidam com erros como a divisão por zero.
 
-javascript
+```javascript
 // Variáveis para armazenar o número atual, o número anterior e a operação selecionada
 let currentNumber = '';
 let previousNumber = '';
@@ -168,7 +151,7 @@ function clearDisplay() {
 Estilização
 A estilização básica é definida no arquivo style.css e fornece um layout simples e limpo para a calculadora.
 
-css
+```css
 body {
     margin: 0;
     padding: 0;
